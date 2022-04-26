@@ -20,6 +20,7 @@ public class ShoppingTest extends Utility {
     @Test
     public void verifyThatUserShouldPlaceOrderSuccessfullyForOllieTheAppControlledRobot() throws InterruptedException {
         //1.1 Mouse hover on the “Hot deals” link
+        Thread.sleep(1000);
         mouseHover(By.xpath("//ul[@class='nav navbar-nav top-main-menu']//span[@class='primary-title']"));
 
         //1.2 Mouse hover on the “Bestsellers”  link and click
@@ -128,23 +129,28 @@ public class ShoppingTest extends Utility {
         Thread.sleep(800);
 
         //1.20 Select the Delivery Method to “Local Shipping”
-        clickOnElement(By.xpath("//input[@id='method128']"));
+        mouseHover(By.xpath("//input[@value='128']"));
+        Thread.sleep(800);
+        clickOnElement(By.xpath("//input[@value='128']"));
 
         //1.21 Select Payment Method “COD”
-        clickOnElement(By.xpath("//input[@id='pmethod6']"));
+        mouseHover(By.xpath("//input[@value='6']"));
+        Thread.sleep(800);
+        clickOnElement(By.xpath("//input[@value='6']"));
         Thread.sleep(800);
 
         //1.22 Verify the total $309.73
-        String actualMessage9_1 = getTextFromElement(By.xpath("//div[@class='total clearfix']//span/span[@class='surcharge-cell']/span[@class ='part-prefix']"));
-        String actualMessage9_2 = getTextFromElement(By.xpath("//div[@class='total clearfix']//span/span[@class='surcharge-cell']/span[@class ='part-integer']"));
-        String actualMessage9_3 = getTextFromElement(By.xpath("//div[@class='total clearfix']//span/span[@class='surcharge-cell']/span[@class ='part-decimalDelimiter']"));
-        String actualMessage9_4 = getTextFromElement(By.xpath("//div[@class='total clearfix']//span/span[@class='surcharge-cell']/span[@class ='part-decimal']"));
+        String actualMessage9_1 = getTextFromElement(By.xpath("//body/div[@id='page-wrapper']/div[@id='page']/div[@id='main-wrapper']/div[@id='main']/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[3]/span[2]/span[1]/span[1]/span[1]"));
+        String actualMessage9_2 = getTextFromElement(By.xpath("//body/div[@id='page-wrapper']/div[@id='page']/div[@id='main-wrapper']/div[@id='main']/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[3]/span[2]/span[1]/span[1]/span[2]"));
+        String actualMessage9_3 = getTextFromElement(By.xpath("//body/div[@id='page-wrapper']/div[@id='page']/div[@id='main-wrapper']/div[@id='main']/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[3]/span[2]/span[1]/span[1]/span[3]"));
+        String actualMessage9_4 = getTextFromElement(By.xpath("//body/div[@id='page-wrapper']/div[@id='page']/div[@id='main-wrapper']/div[@id='main']/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[3]/span[2]/span[1]/span[1]/span[4]"));
         String actualMessage7 = actualMessage9_1 + actualMessage9_2 + actualMessage9_3 + actualMessage9_4;
-        String expectedMessage7 = "$309.73";
+        String expectedMessage7 = "$311.03";
         Assert.assertEquals("Not navigate to page", expectedMessage7, actualMessage7);
 
         //1.23 Click on “Place Order” Button
-        clickOnElement(By.xpath("//button[@class='btn regular-button regular-main-button place-order submit']"));
+        Thread.sleep(1000);
+        clickOnElement(By.xpath("//body/div[@id='page-wrapper']/div[@id='page']/div[@id='main-wrapper']/div[@id='main']/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/div[4]/button[1]"));
         Thread.sleep(1000);
 
         //1.24 Verify the text “Thank you for your order”
@@ -158,6 +164,7 @@ public class ShoppingTest extends Utility {
     public void verifyThatUserShouldClearShoppingCartSuccessfully() throws InterruptedException {
 
         //1.1 Mouse hover on the “Hot deals” link
+        Thread.sleep(1000);
         mouseHover(By.xpath("//ul[@class='nav navbar-nav top-main-menu']//span[@class='primary-title']"));
 
         //1.2 Mouse hover on the “Bestseller”  link and click
@@ -178,9 +185,10 @@ public class ShoppingTest extends Utility {
         clickOnElement(By.xpath("//li[@class='list-type-grid ']//a[@data-sort-by='translations.name' and @data-sort-order='asc']"));
 
         //1.5 Click on “Add to cart” button of the product “Vinyl Idolz: Ghostbusters”
-        mouseHover(By.xpath("//body/div[@id='page-wrapper']/div[@id='page']/div[@id='main-wrapper']/div[@id='main']/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[3]/ul[1]/li[8]/div[1]/div[1]/a[1]"));
-        Thread.sleep(400);
-        clickOnElement(By.xpath("//button[@class='btn  regular-button add-to-cart product-add2cart productid-13']"));
+        Thread.sleep(1000);
+        mouseHover(By.xpath("//body/div[@id='mm-0']/div[@id='page-wrapper']/div[@id='page']/div[@id='main-wrapper']/div[@id='main']/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[3]/ul[1]/li[8]/div[1]/div[1]/a[1]/img[1]"));
+       Thread.sleep(400);
+        clickOnElement(By.xpath("//body/div[@id='mm-0']/div[@id='page-wrapper']/div[@id='page']/div[@id='main-wrapper']/div[@id='main']/div[1]/div[3]/div[1]/div[1]/div[2]/div[1]/div[1]/div[3]/ul[1]/li[8]/div[1]/div[2]/div[4]/div[1]/button[1]"));
 
         //1.6 Verify the message “Product has been added to your cart” display in  green bar
         Thread.sleep(400);
@@ -192,8 +200,8 @@ public class ShoppingTest extends Utility {
         clickOnElement(By.xpath("//a[@class='close']"));
 
         //1.8 Click on “Your cart” icon and Click on “View cart” button
-        clickOnElement(By.xpath("//div[@title='Your cart']"));
-        clickOnElement(By.xpath("//a[@class='regular-button cart']"));
+        clickOnElement(By.xpath("//div[@class='lc-minicart lc-minicart-horizontal collapsed recently-updated']"));
+        clickOnElement(By.xpath("//span[contains(text(),'View cart')]"));
 
         //1.9 Verify the text “Your shopping cart - 1 item”
         String actualMessage2 = getTextFromElement(By.xpath("//h1[text()='Your shopping cart - 1 item']"));

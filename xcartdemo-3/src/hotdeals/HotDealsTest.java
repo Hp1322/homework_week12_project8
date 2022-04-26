@@ -20,11 +20,11 @@ public class HotDealsTest extends Utility {
     @Test
     public void verifySaleProductsArrangeAlphabetically() throws InterruptedException {
         //1.1 Mouse hover on the “Hot deals” link
-        Thread.sleep(600);
+        Thread.sleep(1000);
         mouseHover(By.xpath("//ul[@class='nav navbar-nav top-main-menu']//span[@class='primary-title']"));
 
         //1.2 Mouse hover on the “Sale”  link and click
-        Thread.sleep(600);
+        Thread.sleep(1000);
         mouseHover(By.xpath("//li[@class='leaf has-sub']//span[text()='Sale']"));
         //Thread.sleep(300);
         clickOnElement(By.xpath("//li[@class='leaf has-sub']//span[text()='Sale']"));
@@ -48,9 +48,11 @@ public class HotDealsTest extends Utility {
     @Test
     public void verifySaleProductsPriceArrangeLowToHigh() throws InterruptedException {
         //2.1 Mouse hover on the “Hot deals” link
+        Thread.sleep(1000);
         mouseHover(By.xpath("//ul[@class='nav navbar-nav top-main-menu']//span[@class='primary-title']"));
 
         //2.2 Mouse hover on the “Sale”  link and click
+        Thread.sleep(1000);
         mouseHover(By.xpath("//li[@class='leaf has-sub']//span[text()='Sale']"));
         Thread.sleep(300);
         clickOnElement(By.xpath("//li[@class='leaf has-sub']//span[text()='Sale']"));
@@ -74,10 +76,12 @@ public class HotDealsTest extends Utility {
     @Test
     public void verifySaleProductsArrangeByRates() throws InterruptedException {
         //3.1 Mouse hover on the “Hot deals” link
+        Thread.sleep(1000);
         mouseHover(By.xpath("//ul[@class='nav navbar-nav top-main-menu']//span[@class='primary-title']"));
         //Thread.sleep(300);
 
         //3.2 Mouse hover on the “Sale”  link and click
+        Thread.sleep(1000);
         mouseHover(By.xpath("//li[@class='leaf has-sub']//span[text()='Sale']"));
         Thread.sleep(400);
         clickOnElement(By.xpath("//li[@class='leaf has-sub']//span[text()='Sale']"));
@@ -100,9 +104,11 @@ public class HotDealsTest extends Utility {
     @Test
     public void verifyBestSellersProductsArrangeByZToA() throws InterruptedException {
         //1.1 Mouse hover on the “Hot deals” link
+        Thread.sleep(1000);
         mouseHover(By.xpath("//ul[@class='nav navbar-nav top-main-menu']//span[@class='primary-title']"));
 
         //1.2 Mouse hover on the “Bestsellers”  link and click
+        Thread.sleep(1000);
         mouseHover(By.xpath("//li[@class='leaf has-sub']//span[text()='Bestsellers']"));
         Thread.sleep(400);
         clickOnElement(By.xpath("//li[@class='leaf has-sub']//span[text()='Bestsellers']"));
@@ -128,9 +134,11 @@ public class HotDealsTest extends Utility {
     @Test
     public void verifyBestSellersProductsPriceArrangeHighToLow() throws InterruptedException {
         //2.1 Mouse hover on the “Hot deals” link
+        Thread.sleep(1000);
         mouseHover(By.xpath("//ul[@class='nav navbar-nav top-main-menu']//span[@class='primary-title']"));
 
         //2.2 Mouse hover on the “Bestsellers” link and click
+        Thread.sleep(1000);
         mouseHover(By.xpath("//li[@class='leaf has-sub']//span[text()='Bestsellers']"));
         Thread.sleep(400);
         clickOnElement(By.xpath("//li[@class='leaf has-sub']//span[text()='Bestsellers']"));
@@ -154,9 +162,11 @@ public class HotDealsTest extends Utility {
     @Test
     public void verifyBestSellersProductsArrangeByRates() throws InterruptedException {
         //3.1 Mouse hover on the “Hot deals” link
+        Thread.sleep(1000);
         mouseHover(By.xpath("//ul[@class='nav navbar-nav top-main-menu']//span[@class='primary-title']"));
 
         //3.2 Mouse hover on the “Bestsellers”  link and click
+        Thread.sleep(1000);
         mouseHover(By.xpath("//li[@class='leaf has-sub']//span[text()='Bestsellers']"));
         Thread.sleep(400);
         clickOnElement(By.xpath("//li[@class='leaf has-sub']//span[text()='Bestsellers']"));
